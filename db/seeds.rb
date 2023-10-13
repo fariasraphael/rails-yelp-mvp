@@ -7,3 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require 'faker'
+
+10.times do
+  Restaurant.create(address: Faker::Address.street_address,
+                    name: Faker::Restaurant.name,
+                    category: Restaurant::TYPE.sample,
+                    phone_number: Faker::PhoneNumber.phone_number)
+end
